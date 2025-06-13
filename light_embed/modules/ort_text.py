@@ -126,7 +126,8 @@ class OrtText(OrtModel):
 	OUTPUT_NAMES = ("token_embeddings", "sentence_embedding")
 	
 	output_name_map = {
-		"last_hidden_state": "token_embeddings"
+		"last_hidden_state": "token_embeddings",
+		"text_embeds": "token_embeddings"
 	}
 	
 	def __init__(
