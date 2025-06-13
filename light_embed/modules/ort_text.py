@@ -99,6 +99,13 @@ managed_models = [
 		"base_model": "jinaai/jina-colbert-v1-en",
 		"onnx_file": "model.onnx"
 	},
+	{
+		"model_name": "jinaai/jina-embeddings-v3",
+		"onnx_file": "onnx/model.onnx",
+		"onnx_extra_files": ["onnx/model.onnx_data"],
+		"pooling_config_path": "1_Pooling",
+		"normalize": True
+	},
 	# nomic-ai models
 	{
 		"model_name": "nomic-ai/nomic-embed-text-v1.5",
@@ -126,7 +133,8 @@ class OrtText(OrtModel):
 	OUTPUT_NAMES = ("token_embeddings", "sentence_embedding")
 	
 	output_name_map = {
-		"last_hidden_state": "token_embeddings"
+		"last_hidden_state": "token_embeddings",
+		"text_embeds": "token_embeddings"
 	}
 	
 	def __init__(
