@@ -103,6 +103,9 @@ managed_models = [
 		"model_name": "jinaai/jina-embeddings-v3",
 		"onnx_file": "onnx/model.onnx",
 		"onnx_extra_files": ["onnx/model.onnx_data"],
+		"quantized_model_files": {
+			"quantized": "onnx/model_fp16.onnx"
+		},
 		"pooling_config_path": "1_Pooling",
 		"normalize": True
 	},
