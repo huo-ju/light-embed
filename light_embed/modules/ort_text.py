@@ -109,6 +109,26 @@ managed_models = [
 		"pooling_config_path": "1_Pooling",
 		"normalize": True
 	},
+    # snowflake 
+	{
+		"model_name": "Snowflake/snowflake-arctic-embed-m-v2.0",
+		"onnx_file": "onnx/model.onnx",
+		"pooling_config_path": "1_Pooling",
+		"quantized_model_files": {
+			"quantized": "onnx/model_quantized.onnx"
+		},
+		"normalize": True
+	},
+	{
+		"model_name": "Snowflake/snowflake-arctic-embed-l-v2.0",
+		"onnx_file": "onnx/model.onnx",
+		"onnx_extra_files": ["onnx/model.onnx_data"],
+		"pooling_config_path": "1_Pooling",
+		"quantized_model_files": {
+			"quantized": "onnx/model_quantized.onnx"
+		},
+		"normalize": True
+	},
 	# nomic-ai models
 	{
 		"model_name": "nomic-ai/nomic-embed-text-v1.5",
